@@ -4,10 +4,10 @@
   {
 
     if (isset($_SERVER['HTTP_X_HUB_SIGNATURE_256'])) {
-
+      
       $secret = 'betoka32';
-
-      return $_SERVER['HTTP_X_HUB_SIGNATURE_256'] === 'sha256='.hash('sha256', $secret.$payloadBody);
+            
+      return $_SERVER['HTTP_X_HUB_SIGNATURE_256'] === $signature = hash_hmac('sha1', $payloadBody, $secret);
 
     }
 
