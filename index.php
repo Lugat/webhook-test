@@ -7,7 +7,7 @@
       
       $secret = 'betoka32';
             
-      return $_SERVER['HTTP_X_HUB_SIGNATURE_256'] === $signature = hash_hmac('sha256', $payloadBody, $secret);
+      return $_SERVER['HTTP_X_HUB_SIGNATURE_256'] === hash_hmac('sha256', $payloadBody, $secret);
 
     }
 
